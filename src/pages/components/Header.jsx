@@ -8,11 +8,12 @@ class Header extends React.Component {
 
     this.state = {
       gastos: 0,
+      currency: 'BRL',
     };
   }
 
   render() {
-    const { gastos } = this.state;
+    const { gastos, currency } = this.state;
     const { emailUser } = this.props;
     return (
       <header>
@@ -24,7 +25,7 @@ class Header extends React.Component {
           { gastos }
         </p>
         <p data-testid="header-currency-field">
-          BRL
+          { currency }
         </p>
       </header>
     );
@@ -33,6 +34,7 @@ class Header extends React.Component {
 
 const mapStateToProps = (state) => ({
   emailUser: state.user.email,
+  getCurrency: state.wallet.currency,
 });
 
 Header.propTypes = {
