@@ -9,5 +9,14 @@ export const changeEmail = (payload) => ({
 
 export const getCurrency = (payload) => ({
   type: GET_CURRENCY,
-  currencies: payload,
+  payload,
 });
+
+export const getCurrencyAPI = () => async (dispatch) => {
+  const url = 'https://economia.awesomeapi.com.br/json/all';
+  const response = await fetch(url);
+  const data = await response.json();
+  const currencyFilter = Object.keys(data).filter((currency) => (
+    currency !== 'USDT' && currency !== 'DOGE'));
+  dispatch(getCurrency(currencyFilter));
+};

@@ -3,7 +3,6 @@ import { GET_CURRENCY } from '../actions';
 
 const initialState = {
   currencies: [],
-  expenses: [],
 };
 
 const reducerWallet = (state = initialState, action) => {
@@ -11,7 +10,7 @@ const reducerWallet = (state = initialState, action) => {
   case GET_CURRENCY:
     return {
       ...state,
-      currencies: [action.payload],
+      currencies: action.payload,
     };
   default:
     return state;
