@@ -4,6 +4,8 @@ import { GET_CURRENCY, REMOVE_EXPENSES, SET_EXPENSES } from '../actions';
 const initialState = {
   currencies: [],
   expenses: [],
+  updateAll: {},
+  editing: false,
 };
 
 const reducerWallet = (state = initialState, action) => {
@@ -22,6 +24,23 @@ const reducerWallet = (state = initialState, action) => {
     return {
       ...state,
       expenses: [...state.expenses.filter((exp) => exp.id !== action.id)],
+    };
+  case 'EDIT_EXPENSES':
+    return {
+      ...state,
+      editing: true,
+      updateAll: action.item,
+    };
+  case 'UPDATE_EXPENSES':
+    return {
+      ...state,
+      editing: false,
+      expenses: state.expenses.map((item) => {
+        if (item.id === action.payload.id) {
+          return action.payload;
+        }
+        return item;
+      }),
     };
   default:
     return state;

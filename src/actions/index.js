@@ -40,3 +40,13 @@ export const removeExpenses = (id) => ({
   type: REMOVE_EXPENSES,
   id,
 });
+
+export const edit = (item) => ({
+  type: 'EDIT_EXPENSES',
+  item,
+});
+
+export const update = (payload) => ({
+  type: 'UPDATE_EXPENSES',
+  payload,
+});

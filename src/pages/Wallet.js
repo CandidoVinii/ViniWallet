@@ -5,6 +5,7 @@ import { getCurrencyAPI } from '../actions';
 import AddExpense from './components/AddExpense';
 import Header from './components/Header';
 import Table from './components/Table';
+import UpdateExpenses from './components/UpdateExpense';
 
 class Wallet extends React.Component {
   componentDidMount() {
@@ -13,10 +14,11 @@ class Wallet extends React.Component {
   }
 
   render() {
+    const { edit } = this.props;
     return (
       <div>
         <Header />
-        <AddExpense />
+        { edit ? <UpdateExpenses /> : <AddExpense /> }
         <Table />
       </div>
     );
@@ -27,8 +29,13 @@ const mapDispatchToProps = (dispatch) => ({
   getCurrencies: () => dispatch(getCurrencyAPI()),
 });
 
+const mapStateToProps = (state) => ({
+  edit: state.wallet.editing,
+});
+
 Wallet.propTypes = {
   getCurrencies: PropTypes.func.isRequired,
+  edit: PropTypes.bool.isRequired,
 };
 
-export default connect(null, mapDispatchToProps)(Wallet);
+export default connect(mapStateToProps, mapDispatchToProps)(Wallet);
