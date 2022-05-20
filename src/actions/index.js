@@ -1,6 +1,8 @@
 export const CHANGE_EMAIL = 'CHANGE_EMAIL';
 export const SET_EXPENSES = 'SET_EXPENSES';
 export const GET_CURRENCY = 'GET_CURRENCY';
+export const REMOVE_EXPENSES = 'REMOVE_EXPENSES';
+export const UPDATE_EXPENSES = 'UPDATE_EXPENSES';
 
 export const changeEmail = (payload) => ({
   type: CHANGE_EMAIL,
@@ -33,3 +35,8 @@ export const getExpenses = (state) => async (dispatch) => {
   state.exchangeRates = data;
   dispatch(setExpenses(state));
 };
+
+export const removeExpenses = (id) => ({
+  type: REMOVE_EXPENSES,
+  id,
+});
