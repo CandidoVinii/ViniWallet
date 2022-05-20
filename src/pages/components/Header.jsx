@@ -7,14 +7,14 @@ class Header extends React.Component {
     super(props);
 
     this.state = {
-      gastos: 0,
       currency: 'BRL',
     };
   }
 
   render() {
-    const { gastos, currency } = this.state;
-    const { emailUser } = this.props;
+    const { currency } = this.state;
+    const { emailUser, total } = this.props;
+    console.log(total);
     return (
       <header>
         <h1>TRYBEWALLET</h1>
@@ -22,7 +22,7 @@ class Header extends React.Component {
           { emailUser }
         </p>
         <p data-testid="total-field">
-          { gastos }
+          { total.toFixed(2) }
         </p>
         <p data-testid="header-currency-field">
           { currency }
@@ -34,11 +34,16 @@ class Header extends React.Component {
 
 const mapStateToProps = (state) => ({
   emailUser: state.user.email,
-  getCurrencies: state.wallet.currencies,
+  total: state.wallet.expenses
+    .reduce((acc, curr) => {
+      acc += curr.value * Number(curr.exchangeRates[curr.currency].ask);
+      return acc;
+    }, 0),
 });
 
 Header.propTypes = {
   emailUser: PropTypes.string.isRequired,
+  total: PropTypes.number.isRequired,
 };
 
 export default connect(mapStateToProps)(Header);
