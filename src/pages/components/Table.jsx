@@ -10,7 +10,7 @@ class Table extends React.Component {
     const { expensesReturn, remove, updateExpense } = this.props;
     console.log(expensesReturn);
     return (
-      <div className="bg-white shadow-lg hover:shadow-xl rounded-md overflow-hidden">
+      <div className="bg-white mt-6 shadow-lg hover:shadow-xl rounded-md overflow-hidden">
         <table className="table-flex table-auto w-full leading-normal" >
           <thead className="uppercase text-gray-600 text-xs font-semibold bg-gray-200">
             <tr className="text-center hidden md:table-row">

@@ -49,12 +49,12 @@ class UpdateExpenses extends React.Component {
     const payment = ['Dinheiro', 'Cartão de crédito', 'Cartão de débito'];
     const expense = ['Alimentação', 'Lazer', 'Trabalho', 'Transporte', 'Saúde'];
     return(
-      <form className="mt-16 flex justify-evenly h-28 items-center border-2 rounded-lg dark:bg-gray-800 dark:border-gray-700 hover:dark:bg-gray-400 hover:text-zinc-900 transition-all">
+      <form className="mt-16 flex justify-evenly h-28 items-center border-2 rounded-lg bg-white text-zinc-900 transition-all">
         <label htmlFor="valor">
           Valor:
           <input
             data-testid="value-input"
-            className="form-input text-zinc-900 rounded-lg focus:caret-indigo-500 transition-colors"
+            className="appearance-none block w-full h-10 bg-gray-200 text-gray-700 border-indigo-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
             type="number"
             name="value"
             value={ value }
@@ -65,7 +65,7 @@ class UpdateExpenses extends React.Component {
           Descrição:
           <input
             data-testid="description-input"
-            className="form-input text-zinc-900 rounded-lg focus:caret-indigo-500 transition-colors"
+            className="appearance-none block w-full h-10 bg-gray-200 text-gray-700 border-indigo-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
             type="text"
             name="description"
             value={ description }
@@ -77,7 +77,7 @@ class UpdateExpenses extends React.Component {
           <select
             name="currency"
             id="Moeda"
-            className="form-select rounded-lg text-zinc-900"
+            className="appearance-none block text-xs w-20 h-10 bg-gray-200 text-gray-700 border-indigo-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
             data-testid="currency-input"
             value={ currency }
             onChange={ this.handleChange }
@@ -93,7 +93,7 @@ class UpdateExpenses extends React.Component {
           Método de pagamento:
           <select
             data-testid="method-input"
-            className="form-select rounded-lg text-zinc-900 w-fit"
+            className="appearance-none block text-xs w-full h-10 bg-gray-200 text-gray-700 border-indigo-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
             name="method"
             id="method"
             value={ method }
@@ -110,7 +110,7 @@ class UpdateExpenses extends React.Component {
           Categoria:
           <select
             data-testid="tag-input"
-            className="form-select rounded-lg text-zinc-900"
+            className="appearance-none block text-xs w-40 h-10 bg-gray-200 text-gray-700 border-indigo-600 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
             name="tag"
             id="tag"
             value={ tag }

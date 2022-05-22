@@ -14,7 +14,7 @@ class Header extends React.Component {
 
   render() {
     const { currency } = this.state;
-    const { emailUser, total } = this.props;
+    const { emailUser, total, totalLenght } = this.props;
     console.log(total);
     return (
       <header className="border-2 rounded-lg h-32 flex items-center justify-between">
@@ -31,13 +31,14 @@ class Header extends React.Component {
             { emailUser }
           </p>
         </div>
-        <div className="flex items-center">
-          <Money size={34} />
-          <p data-testid="total-field">
-            <p data-testid="header-currency-field">
-              { total.toFixed(2) } { currency }
-            </p>
-          </p>
+        <div>
+          <div className="flex items-center">
+            <Money size={34} />
+              <p data-testid="header-currency-field">
+                { total.toFixed(2) } { currency }
+              </p>
+          </div>
+          <span>{`Você tem ${totalLenght.length} itens`}</span>
         </div>
       </header>
     );
@@ -46,6 +47,7 @@ class Header extends React.Component {
 
 const mapStateToProps = (state) => ({
   emailUser: state.user.email,
+  totalLenght: state.wallet.expenses,
   total: state.wallet.expenses
     .reduce((acc, curr) => {
       acc += curr.value * Number(curr.exchangeRates[curr.currency].ask);
@@ -56,6 +58,7 @@ const mapStateToProps = (state) => ({
 Header.propTypes = {
   emailUser: PropTypes.string.isRequired,
   total: PropTypes.number.isRequired,
+  totalLenght: PropTypes.arrayOf.isRequired,
 };
 
 export default connect(mapStateToProps)(Header);
