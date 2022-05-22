@@ -49,55 +49,54 @@ class Login extends React.Component {
   render() {
     const { email, password, enterBtn } = this.state;
     return (
-      <div className="justify-center items-center flex h-screen bg-zinc-600">
-        <div className="justify-center h-96 w-96 items-center flex-col border-2 bg-[#09090A] rounded-lg">
-          <h1 className="text-center tex mt-4 text-4xl ">Login</h1>
-          <div className="items-center mt-2 flex justify-center">
-            <Wallet size={48} />
+      <div className="justify-center items-center flex h-screen ">
+        <div className="w-full max-w-xs m-auto bg-indigo-100 rounded p-5">
+          <h1 className="text-center text-indigo-500 mt-4 text-3xl ">ViniWallet</h1>
+          <div className="w-20 mx-auto mb-5 items-center mt-2 flex justify-center">
+            <Wallet size={48} color={'#09090A'} />
           </div>
-          <div className="flex mt-14 -ml-4 justify-center">
+          <div>
             <label
-              className="flex items-center w-8/12 h-10 text-[#09090A] hover:bg-white hover:text-left uppercase hover:text-zinc-900 transition-all rounded-lg"
+              className="mb-2 text-indigo-500"
               for="email">
               Email:
+            </label>
               <input
                 data-testid="email-input"
-                className="rounded-lg h-10 hover:ml-10 hover:text-[#09090A] focus:border-2transition-all"
+                className="w-full p-2 mb-6 text-indigo-700 border-b-2 border-indigo-500 outline-none focus:bg-gray-300"
                 type="text"
                 name="email"
                 value={ email }
                 onChange={ this.handleChange }
               />
-            </label>
           </div>
-          <div className="flex mt-2 -ml-[21px] justify-center">
+          <div>
             <label
               for="password"
-              className="flex items-center w-8/12 h-10 text-[#09090A] uppercase hover:bg-white hover:text-zinc-900 transition-all rounded-lg"
+              className="block mb-2 text-indigo-500"
             >
               Senha:
+            </label>
               <input
                 data-testid="password-input"
-                className="rounded-lg h-10 hover:ml-10 hover:text-[#09090A] focus:border-2 transition-all"
+                className="w-full p-2 mb-6 text-indigo-700 border-b-2 border-indigo-500 outline-none focus:bg-gray-300"
                 type="password"
                 name="password"
                 value={ password }
                 onChange={ this.handleChange }
               />
-            </label>
-
           </div>
           <div className="flex justify-center">
             <button
-              className="mt-14 w-20 h-10 justify-center flex items-center rounded-lg transition-colors"
+              className="w-full flex justify-center bg-indigo-700 hover:bg-pink-700 text-white font-bold py-2 px-4 mb-6 rounded"
               type="submit"
               disabled={ enterBtn }
               onClick={ this.userClick }
             >
               { 
                 enterBtn 
-                ? <Lock size={42} color="#DC2626" className="border-2 rounded-lg" />
-                  : <LockOpen size={42} color="#65A30D" className="border-2 rounded-lg"  /> }
+                ? <Lock size={42} color="#09090A" />
+                  : <LockOpen size={42} color="#09090A" /> }
             </button>
           </div>
         </div>
