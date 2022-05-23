@@ -35,10 +35,13 @@ class Header extends React.Component {
           <div className="flex items-center">
             <Money size={34} />
               <p data-testid="header-currency-field">
-                { total.toFixed(2) } { currency }
+               {`R$ ${ total.toFixed(2) }`} 
               </p>
           </div>
-          <span>{`Você tem ${totalLenght.length} itens`}</span>
+            { totalLenght.length >= 0 && totalLenght.length <= 1  ? <span>{`Você tem ${totalLenght.length} despesa`}</span>
+            : <span>{`Você tem ${totalLenght.length} despesas`}</span>
+            }
+
         </div>
       </header>
     );

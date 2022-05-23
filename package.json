@@ -1,5 +1,4 @@
 {
-  "homepage": "http://CandidoVinii.github.io/ViniWallet", 
   "name": "sd-0x-project-trybewallet",
   "version": "0.1.0",
   "private": true,
@@ -28,10 +27,11 @@
     "redux-thunk": "2.3.0",
     "stylelint-order": "4.1.0"
   },
+  "homepage": "https://CandidoVinii.github.io/ViniWallet",
   "scripts": {
-    "dev": "nodemon server.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
+    "dev": "nodemon server.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
