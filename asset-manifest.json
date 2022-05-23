@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ViniWallet/static/css/main.b46f1350.css",
+    "main.js": "/ViniWallet/static/js/main.8d4f11a4.js",
+    "index.html": "/ViniWallet/index.html",
+    "main.b46f1350.css.map": "/ViniWallet/static/css/main.b46f1350.css.map",
+    "main.8d4f11a4.js.map": "/ViniWallet/static/js/main.8d4f11a4.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b46f1350.css",
+    "static/js/main.8d4f11a4.js"
+  ]
+}
