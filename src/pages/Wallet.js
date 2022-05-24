@@ -18,7 +18,7 @@ class Wallet extends React.Component {
     return (
       <div>
         <Header />
-        <div className="border-2 rounded-lg mt-8 items-center" >
+        <div className="border-2 bg-indigo-100 rounded-lg mt-8 items-center" >
           <div className="rounded-lg mb-16">
             { edit ? <UpdateExpenses className="table-auto -mt-16" />
               : <AddExpense className="table-auto" /> }

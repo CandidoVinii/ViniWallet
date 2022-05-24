@@ -4,7 +4,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { changeEmail } from '../actions';
-import { Lock, LockOpen, Wallet } from 'phosphor-react';
+import { Lock, LockOpen, Wallet, GithubLogo } from 'phosphor-react';
 
 class Login extends React.Component {
   constructor() {
@@ -86,7 +86,7 @@ class Login extends React.Component {
                 onChange={ this.handleChange }
               />
           </div>
-          <div className="flex justify-center">
+          <div className="flex-col justify-center">
             <button
               className="w-full flex justify-center bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 mb-6 rounded"
               type="submit"
@@ -98,6 +98,9 @@ class Login extends React.Component {
                 ? <Lock size={32} color="#09090A" />
                   : <LockOpen size={32} color="#09090A" /> }
             </button>
+            <a target="_blank" className="flex items-center w-full justify-center"  href="https://github.com/CandidoVinii">
+              <GithubLogo size={28} color="#151414" weight="thin" />
+            </a>
           </div>
         </div>
       </div>

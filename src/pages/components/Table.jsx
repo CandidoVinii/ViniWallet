@@ -53,10 +53,10 @@ class Table extends React.Component {
                   className="border-t first:border-t-0 flex justify-center items-center p-1 hover:bg-gray-100 md:table-row flex-col w-full flex-wrap" 
                   key={ item.id }
                   >
-                    <td scope="row" className="px-6 py-4 whitespace-nowrap text-base text-center text-gray-600 uppercase font-semibold">{ item.description }</td>
+                    <td scope="row" className="px-6 py-4 whitespace-nowrap text-center text-gray-600 uppercase italic font-mono text-lg">{ item.description }</td>
                     <td scope="col" className="px-6 text-center py-3 p-1">{ item.tag }</td>
                     <td scope="col" className="px-6 text-center py-3 p-1">{ item.method }</td>
-                    <td scope="col" className="px-6 text-center py-3 p-1">{`${ item.exchangeRates[item.currency].code }: ${ (Number(item.value).toFixed(2)) }`}</td>
+                    <td scope="col" className="px-6 text-center py-3 p-1">{`${ (Number(item.value).toFixed(2)) }`}</td>
                     <td scope="col" className="px-6 text-center py-3 p-1">{ item.exchangeRates[item.currency].name }</td>
                     <td scope="col" className="px-6 text-center py-3 p-1">
                       {

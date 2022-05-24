@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getExpenses } from '../../actions';
-import { ArrowRight } from 'phosphor-react';
+import { FirstAid } from 'phosphor-react';
 
 const INITIAL_STATE = {
   value: '',
@@ -39,7 +39,7 @@ class AddExpense extends React.Component {
     const payment = ['Dinheiro', 'Cartão de crédito', 'Cartão de débito'];
     const expense = ['Alimentação', 'Lazer', 'Trabalho', 'Transporte', 'Saúde'];
     return (
-      <form className="mt-16 flex justify-evenly h-28 items-center border-2 rounded-lg bg-white text-zinc-900 transition-all">
+      <form className="mt-16 flex justify-evenly h-28 items-center hover:bg-gray-100 border-2 rounded-lg bg-white text-zinc-900 transition-all shadow-lg hover:shadow-xl">
         <label htmlFor="valor">
           Valor:
           <input
@@ -48,6 +48,7 @@ class AddExpense extends React.Component {
             type="number"
             name="value"
             value={ value }
+            min="0"
             onChange={ this.handleChange }
           />
         </label>
@@ -114,10 +115,10 @@ class AddExpense extends React.Component {
         </label>
         <button
           type="button"
-          className="pl-4"
+          className="mt-2 bg-indigo-600 hover:bg-indigo-900 transition-all hover:shadow-2xl w-10 h-10 flex justify-center items-center rounded"
           onClick={ this.handleClick }
         >
-          <ArrowRight size={24} color="#151414" weight="bold" />
+          <FirstAid size={28} color="#ffff" weight="thin" />
         </button>
       </form>
     );
